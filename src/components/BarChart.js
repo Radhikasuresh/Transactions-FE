@@ -3,7 +3,6 @@ import { Bar } from "react-chartjs-2";
 import axios from "axios";
 import "chart.js/auto";
 import { API_URL } from "./api";
-
 function BarChart() {
   const [data, setData] = useState({
     labels: [],
@@ -46,12 +45,15 @@ function BarChart() {
   return (
     <div>
       <h1>Price Range Bar Chart</h1>
-      <div style={{ height: "400px", width: "600px" }}>
-        <Bar
-          style={{ marginLeft: "400px", marginTop: "100px" }}
-          data={data}
-          options={{}}
-        />
+      <div
+        style={{
+          height: "400px",
+          width: "600px",
+          marginTop: "100px",
+          marginLeft: "390px",
+        }}
+      >
+        <Bar data={data} options={{}} />
       </div>
     </div>
   );
