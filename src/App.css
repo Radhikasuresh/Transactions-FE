@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+img{
+  height: 583px;
+  width: 100%;
+}
+.nav{
+  display: flex;
+  gap: 2rem;
+  flex-direction: row-reverse;
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: 700;
+background-color: black;
+padding: 15px;
+ cursor: pointer;
+ color: blue;
+ font-size: 25px;
+ 
+}
+.div1:hover{
+  color:lightblue
+}
+.div2:hover{
+  color:lightblue
+}
+.div3:hover{
+  color:lightblue
+}
+
