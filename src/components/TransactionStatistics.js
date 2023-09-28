@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Form } from "react-bootstrap";
+import { API_URL } from "./api";
 
 function TransactionStatistics() {
   const [statistics, setStatistics] = useState({
@@ -14,7 +15,7 @@ function TransactionStatistics() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/statistics?month=${selectedYear}-${selectedMonth}`
+          `${API_URL}/statistics?month=${selectedYear}-${selectedMonth}`
         );
 
         setStatistics({

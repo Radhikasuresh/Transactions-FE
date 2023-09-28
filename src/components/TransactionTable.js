@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Table, Form } from "react-bootstrap";
 import axios from "axios";
+import { API_URL } from "./api";
 
 function TransactionTable() {
   const [transactions, setTransactions] = useState([]);
@@ -20,7 +21,7 @@ function TransactionTable() {
       const yearParam = selectedYear;
 
       const response = await axios.get(
-        `http://localhost:8000/list-transactions?month=${yearParam}-${monthParam}&search=${searchParam}&page=${currentPage}&per_page=${itemsPerPage}`
+        `${API_URL}/list-transactions?month=${yearParam}-${monthParam}&search=${searchParam}&page=${currentPage}&per_page=${itemsPerPage}`
       );
       setTransactions(response.data.transactions);
       setTotalPages(Math.ceil(response.data.total_items / itemsPerPage));

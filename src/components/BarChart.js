@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import axios from "axios";
 import "chart.js/auto";
+import { API_URL } from "./api";
 
 function BarChart() {
   const [data, setData] = useState({
@@ -19,7 +20,7 @@ function BarChart() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:8000/bar-chart");
+        const response = await axios.get(`${API_URL}/bar-chart`);
 
         const priceRanges = Object.keys(response.data);
         const itemCounts = Object.values(response.data);
